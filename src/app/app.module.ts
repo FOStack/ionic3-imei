@@ -7,6 +7,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+import { AndroidPermissions } from '@ionic-native/android-permissions';
+import { Uid } from '@ionic-native/uid';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -22,6 +25,8 @@ import { HomePage } from '../pages/home/home';
     HomePage
   ],
   providers: [
+    AndroidPermissions,
+    Uid,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Uid } from '@ionic-native/uid';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +7,10 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  imei: any = "";
 
+  constructor(private uid: Uid) {
+    this.imei = this.uid.IMEI;
   }
 
 }

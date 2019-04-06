@@ -1,14 +1,51 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Ionic 3 IMEI
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
+
+  <h1>
+    IMEI: {{ imei }}
+  </h1>
+
   <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+    1. Add cordova Android platform.
+  </p>
+  <p>
+    2. Install Uid and AndroidPermissions for Ionic v3 (Both cordova and Native plugins).
+  </p>
+  <p>
+    Note: 'npm install --save @ionic-native/uid@4' and 'npm install --save @ionic-native/android-permissions@4' are the terminal commands to install the Uid and AndroidPermissions native plugins on Ionic version 3 projects
+  </p> 
+  <p>
+    3. Add Uid and AndroidPermissions to the list of imports and provider array in the app.module.ts file.
+  </p>
+  <p>
+    4. Import AndroidPermissions within the app.component.ts file and declare it within the constructor.
+  </p>
+  <p>
+    5. In the app.component.ts file, create a method to check/get android permissions and call it within the callback function inside of Platform.ready().then().
+  </p>
+  <p>
+    6. Import Uid within the home.ts (or which ever page or service you plan to use it) file and declare it within the constructor.
+  </p>
+  <p>
+    7. In the home.ts (or page/service of your choice), you can now use this.uid.IMEI.
+  </p>
+  <p>
+    8. Export or run the app on your device.
+  </p>
+  <p>
+    Note: 'Ionic serve -c' does not support native testing for either of plugins mentioned 
+  </p>
+  <p>
+    9. Accept permissions and close the app.
+  </p>
+  <p>
+    10. Open the app again. The uid and imei will now be available.
   </p>
 </ion-content>
